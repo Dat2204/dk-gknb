@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form đăng ký</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fce4ec;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Hộp thoại (modal) */
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .modal h3 {
+      font-size: 20px;
+      color: #d81b60;
+      margin-bottom: 20px;
+    }
+
+    /* Nút trả lời */
+    .btn {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border: 2px solid #d81b60;
+      border-radius: 5px;
+      background-color: #f8bbd0;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hộp thoại chứa câu hỏi -->
+  <div class="modal">
+    <h3>Bạn có muốn đi gắn kết nội bộ lần này cùng burning không?</h3>
+    <button id="yesBtn" class="btn">Có</button>
+    <button id="noBtn" class="btn">Không</button>
+  </div>
+
+  <script>
+    // Lấy các nút
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    // Khi di chuột vào nút "Không", đổi nội dung thành "Có"
+    noBtn.addEventListener('mouseenter', () => {
+      noBtn.textContent = "Có";
+    });
+
+    // Khi di chuột ra khỏi nút, đổi nội dung trở lại "Không"
+    noBtn.addEventListener('mouseleave', () => {
+      noBtn.textContent = "Không";
+    });
+
+    // Khi nhấn nút "Có", hiển thị thông báo cảm ơn
+    yesBtn.addEventListener('click', () => {
+      alert('Cảm ơn bạn đã đồng ý! 🥰');
+    });
+
+    // Khi nhấn nút "Không" (đã đổi thành "Có"), hiển thị thông báo cảm ơn
+    noBtn.addEventListener('click', () => {
+      alert('Cảm ơn bạn đã đồng ý! 🥰');
+    });
+  </script>
+</body>
+</html>
